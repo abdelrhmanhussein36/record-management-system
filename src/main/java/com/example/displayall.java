@@ -15,18 +15,18 @@ public class displayall {
             File f = new File("records.json");
             
             if (!f.exists() || f.length() == 0) {
-                System.out.println("📋 No records found!");
+                System.out.println(" No records found!");
                 return;
             }
             
             List<Map<String, Object>> records = om.readValue(f, new TypeReference<List<Map<String, Object>>>() {});
             
             if (records.isEmpty()) {
-                System.out.println("📋 No records found!");
+                System.out.println(" No records found!");
                 return;
             }
             
-            System.out.println("\n📋 ALL RECORDS");
+            System.out.println("\n ALL RECORDS");
             System.out.println("========================================");
             int count = 0;
             for (Map<String, Object> record : records) {
@@ -41,7 +41,7 @@ public class displayall {
             System.out.println("========================================");
             
         } catch (Exception e) {
-            System.out.println("❌ Error reading file!");
+            System.out.println(" Error reading file!");
             e.printStackTrace();
         }
     }

@@ -15,12 +15,12 @@ public class search {
             File f = new File("records.json");
             
             if (!f.exists()) {
-                System.out.println("❌ No records found!");
+                System.out.println(" No records found!");
                 return;
             }
             
             Scanner sc = new Scanner(System.in);
-            System.out.print("\n🔍 Enter keyword to search in description: ");
+            System.out.print("\n Enter keyword to search in description: ");
             String keyword = sc.nextLine();
             
             searchByDescription(keyword);
@@ -36,7 +36,7 @@ public class search {
             File f = new File("records.json");
             
             if (!f.exists() || f.length() == 0) {
-                System.out.println("❌ No records found!");
+                System.out.println(" No records found!");
                 return;
             }
             
@@ -45,7 +45,7 @@ public class search {
             boolean found = false;
             int count = 0;
             
-            System.out.println("\n🔍 SEARCH RESULTS for '" + keyword + "'");
+            System.out.println("\n SEARCH RESULTS for '" + keyword + "'");
             System.out.println("========================================");
             
             for (Map<String, Object> record : records) {
@@ -64,9 +64,9 @@ public class search {
             }
             
             if (!found) {
-                System.out.println("❌ No records found with description containing: '" + keyword + "'");
+                System.out.println(" No records found with description containing: '" + keyword + "'");
             } else {
-                System.out.println("✅ Total results found: " + count);
+                System.out.println(" Total results found: " + count);
             }
             System.out.println("========================================");
             

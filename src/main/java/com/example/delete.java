@@ -17,16 +17,16 @@ public class delete {
             File f = new File("records.json");
             
             if (!f.exists() || f.length() == 0) {
-                System.out.println("❌ No records found!");
+                System.out.println(" No records found!");
                 return;
             }
             
-            System.out.println("\n📋 CURRENT RECORDS:");
+            System.out.println("\n CURRENT RECORDS:");
             System.out.println("========================================");
             displayall.displayAllRecords();
             
             Scanner sc = new Scanner(System.in);
-            System.out.print("\n🗑️ Enter ID of record to delete: ");
+            System.out.print("\n Enter ID of record to delete: ");
             int id = sc.nextInt();
             
             List<Map<String, Object>> records = om.readValue(f, new TypeReference<List<Map<String, Object>>>() {});
@@ -39,7 +39,7 @@ public class delete {
                 
                 if (currentId == id) {
                     found = true;
-                    System.out.println("\n🗑️ Deleting record with ID: " + id);
+                    System.out.println("\n Deleting record with ID: " + id);
                     System.out.println("   Amount: $" + record.get("amount"));
                     System.out.println("   Description: " + record.get("description"));
                     System.out.println("   Timestamp: " + record.get("timestamp"));
@@ -49,7 +49,7 @@ public class delete {
             }
             
             if (!found) {
-                System.out.println("❌ Record with ID " + id + " not found!");
+                System.out.println(" Record with ID " + id + " not found!");
                 return;
             }
             
@@ -57,13 +57,13 @@ public class delete {
             String confirm = sc.next();
             
             if (!confirm.equalsIgnoreCase("y")) {
-                System.out.println("❌ Deletion cancelled!");
+                System.out.println(" Deletion cancelled!");
                 return;
             }
             
             om.writeValue(f, updatedRecords);
             
-            System.out.println("✅ Record with ID " + id + " deleted successfully!");
+            System.out.println(" Record with ID " + id + " deleted successfully!");
             
         } catch (Exception e) {
             e.printStackTrace();

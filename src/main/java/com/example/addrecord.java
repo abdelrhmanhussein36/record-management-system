@@ -5,11 +5,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.core.type.TypeReference;
 
 public class addrecord {
     private static int id = 1;
@@ -48,10 +47,10 @@ public class addrecord {
             records.add(record);
             om.writeValue(f, records);
             
-            System.out.println("✅ Record added with ID: " + newid);
+            System.out.println(" Record added with ID: " + newid);
             
         } catch (Exception e) {
-            System.out.println("❌ Error adding record!");
+            System.out.println(" Error adding record!");
             e.printStackTrace();
         }
     }

@@ -8,7 +8,7 @@ public class App {
         
         while (true) {
             System.out.println("\n========================================");
-            System.out.println("📚 RECORD MANAGEMENT SYSTEM");
+            System.out.println(" RECORD MANAGEMENT SYSTEM");
             System.out.println("========================================");
             System.out.println("1. Add Record");
             System.out.println("2. Display All Records");
@@ -22,7 +22,7 @@ public class App {
             
             switch (choice) {
                 case 1:
-                    System.out.println("\n📝 ADD NEW RECORD");
+                    System.out.println("\n ADD NEW RECORD");
                     System.out.println("========================================");
                     System.out.print("Enter amount: $");
                     float amount = sc.nextFloat();
@@ -45,13 +45,13 @@ public class App {
                     break;
                     
                 case 5:
-                    System.out.println("\n👋 Goodbye!");
+                    System.out.println("\n Goodbye!");
                     sc.close();
                     System.exit(0);
                     break;
                     
                 default:
-                    System.out.println("❌ Invalid option! Please choose 1-5.");
+                    System.out.println(" Invalid option! Please choose 1-5.");
             }
         }
     }
